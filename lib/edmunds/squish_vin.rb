@@ -3,7 +3,7 @@ module Edmunds
 
     def squish_vin(squish_vin)
       @base = "http://api.edmunds.com/api/vehicle/v2/squishvins"
-      @url = "/#{squish_vin}"
+      @url = "/#{squish_vin}?"
       call_api
       @json
     end

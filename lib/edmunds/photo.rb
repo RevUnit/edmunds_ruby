@@ -44,12 +44,12 @@ module Edmunds
         # if not available try to get a side shot "S"
         preferred = exterior.select{|s| s["shotTypeAbbreviation"] == "S" } unless preferred.present?
         if preferred.present?
-          selected = preferred.first
+          selected = preferred.sample
         else
-          selected = exterior.first
+          selected = exterior.sample
         end
       else
-        selected = @json.first
+        selected = @json.sample
       end
       @sample = selected["photoSrcs"].select{|s| s.match(/\d{3}(.jpg)/) }.max
     end
