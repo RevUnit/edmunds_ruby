@@ -26,7 +26,7 @@ module Edmunds
     def call_api
       @base_url = @base + @url + @format
       @resp = RestClient.get(@base_url)
-      @json = Crack::JSON.parse(@resp)
+      @json = JSON.parse(@resp)
     end
   end
 
